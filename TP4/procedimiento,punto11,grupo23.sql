@@ -17,7 +17,7 @@ BEGIN
     DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
         ROLLBACK;
-        SELECT 'Error durante la generación del resumen diario' AS Mensaje;
+        SELECT 'se ha producido un error en la generación del resumen diario' AS Mensaje;
     END;
 
     START TRANSACTION;
