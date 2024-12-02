@@ -1,53 +1,7 @@
-# Justificacion del diseño
 
-### Dependencias Funcionales
+Justificación del Diseño:
 
-2) `producto_id` -> `nombre_producto`, `precio`, `stock` 
-    Cada producto tiene su id unico y tiene un nombre, precio y stock. Este puede pertenecer a muchas ordenes
-
-1) `cliente_id` -> `nombre`, `apellido`, `telefono`, `direccion`, `email`
-    Cada cliente se identifica por su id y tiene un nombre, apellido, telefono, direccion y email. Este puede tener muchos productos y muchas ordenes 
-
-
-3) `orden_id` ->  `producto_id`, `cliente_id`, `cantidad`, `motivo`, `fecha`
-    Cada orden se identifica por su `orden_id` y tiene un producto (`producto_id`), un cliente (`cliente_id`), cantidad del producto que compra, motivo y fecha de la compra
-
-## CLAVES CANDIDATAS (Tabla: (clave_candidatas))
-
--**Productos**: (producto_id)
--**Clientes**: (cliente_id)
--**Ordenes**: (orden_id)
-
-## DISEÑO EN TERCERA FORMA NORMAL (3FN)
-
-**Tabla `Productos`**
--`producto_id` (Clave primaria)
--`nombre_producto`
--`stock`
--`precio`
-
-**Tabla `Clientes`**
--`cliente_id` (Clave primaria)
--`nombre`
--`apellido`
--`telefono`
--`direccion`
--`email`
-
-**Tabla `Ordenes`**
--`orden_id` (Clave primaria)
--`producto_id` (Clave foránea que referencia a Productos)
--`cliente_id` (Clave foránea que referencia a Clientes)
--`cantidad`
--`motivo`
--`fecha`
-
-
-
-
-Pensamiento durante 14 segundos
-Justificación del Diseño
-Dependencias Funcionales
+Dependencias Funcionales:
 Usuarios
 IDUsuario → Nombre, Email, FechaRegistro, CuotaMensual
 
@@ -79,39 +33,47 @@ Libros: (IDLibro)
 Préstamos: (IDPrestamo)
 Pagos: (IDPago)
 Multas: (IDMulta)
-Diseño en Tercera Forma Normal (3FN)
-Tabla Usuarios
+
+
+Diseño en Tercera Forma Normal (3FN):
+
+Tabla Usuarios:
 IDUsuario (Clave primaria)
 Nombre
 Email (único)
 FechaRegistro
 CuotaMensual
-Tabla Libros
+
+Tabla Libros:
 IDLibro (Clave primaria)
 Título
 Autor
 AñoPublicacion
 Disponibles
-Tabla Préstamos
+
+Tabla Préstamos:
 IDPrestamo (Clave primaria)
 IDUsuario (Clave foránea que referencia a Usuarios)
 IDLibro (Clave foránea que referencia a Libros)
 FechaPrestamo
 FechaDevolucionEsperada
 FechaDevolucion
-Tabla Pagos
+
+Tabla Pagos:
 IDPago (Clave primaria)
 IDUsuario (Clave foránea que referencia a Usuarios)
 Mes
 Año
 FechaPago
 Monto
-Tabla Multas
+
+Tabla Multas:
 IDMulta (Clave primaria)
 IDPrestamo (Clave foránea que referencia a Préstamos)
 Monto
 FechaMulta
-Justificación del Diseño
+
+Justificación del Diseño:
 El diseño de la base de datos ha sido realizado siguiendo las normas de normalización hasta la Tercera Forma Normal (3FN), con el objetivo de eliminar redundancias, asegurar la integridad de los datos y optimizar el rendimiento de las consultas.
 
 1. Normalización y Integridad de Datos
